@@ -1,15 +1,54 @@
 <html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style.css">
+    </head>
     <body>
         <pre class="mermaid">
           flowchart LR
-              A-->B
-              B-->C
-              C-->D
-              click A callback "Tooltip"
-              click B "https://www.github.com" "This is a link"
-              click C call callback() "Tooltip"
-              click D href "https://www.github.com" "This is a link"
+            A(Contribute in GitLab)-->B(Create your own project)
+            A-->C(Contribute to existing project)
+
+            B-->B1(Blank Project)
+            B-->B2(From Template)
+            B-->B3(Import Project)
+            
+            B3-->B31(Github)
+            B3-->B32(Gitea)
+            B3-->B33(BitBucket)
+
+            C-->C1(Create Fork)
+
+            C1-->C11(Download)
+            C1-->C12(Clone)
+            C1-->C13(Add Files/Change Files)
+
+            C11-->C11A(Creating a merge request)
+            C12-->C11B(Creating a merge request)
+            C13-->C11C(Creating a merge request)
+
+            click A call openPopup()
+            click B call openPopup()
+            click C call openPopup()
+
+            class A,B graph_nodes;
+      
         </pre>
+    
+        <div class="popup-overlay" id="popupOverlay" onclick="closePopup()">
+            <button class="close-button" onclick="closePopup()">✕</button>
+            <!-- Video container -->
+            <div class="video-container">
+                <video controls autoplay width="100%" height="100%">
+                    <source src="test_video.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+        </div>
+
+        <!-- Button to open the popup -->
+        <!-- <button onclick="openPopup()">Open Video Popup</button> -->
 
         <script type="module">
             import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
@@ -18,14 +57,14 @@
         };
         const config = {
             startOnLoad: true,
-            flowchart: { useMaxWidth: true, htmlLabels: true, curve: 'cardinal' },
+            flowchart: { useMaxWidth: true, htmlLabels: true },
             securityLevel: 'loose',
         };
         mermaid.initialize(config);
-
         </script>
-      
 
+        <script src="video_player.js"></script>
+      
       </body>
 
 </html>
