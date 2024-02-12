@@ -1,5 +1,6 @@
 // Function to open the popup
-function openPopup() {
+function openPopup(nodeName) {
+
     document.getElementById("popupOverlay").style.display = "block";
 }
 
@@ -7,4 +8,5 @@ function openPopup() {
 function closePopup() {
     document.getElementById("popupOverlay").style.display = "none";
 }
+
 

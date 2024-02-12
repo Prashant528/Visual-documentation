@@ -28,20 +28,33 @@
             C12-->C11B(Creating a merge request)
             C13-->C11C(Creating a merge request)
 
-            click A call openPopup()
-            click B call openPopup()
-            click C call openPopup()
+            click A call openPopup("")
+            click B call openPopup("")
+            click C call openPopup("")
+            click B1 call openPopup("")
+            click B2 call openPopup("")
+            click B3 call openPopup("")
+            click B31 call openPopup("")
+            click B32 call openPopup("")
+            click B33 call openPopup("")
+            click C1 call openPopup("")
+            click C11 call openPopup("")
+            click C12 call openPopup("")
+            click C13 call openPopup("")
+            click C11A call openPopup("")
+            click C11B call openPopup("")
+            click C11C call openPopup("")
 
-            class A,B graph_nodes;
+            class A,B,C,B1,B2,B3,B31,B32,B33,C1,C11,C12,C13,C11A,C11B,C11C graph_nodes;
       
         </pre>
     
         <div class="popup-overlay" id="popupOverlay" onclick="closePopup()">
             <button class="close-button" onclick="closePopup()">✕</button>
-            <!-- Video container -->
+           
             <div class="video-container">
                 <video controls autoplay width="100%" height="100%">
-                    <source src="test_video.mp4" type="video/mp4">
+                    <source id="video_source" src="test_video.mp4" type="video/mp4">
                     Your browser does not support the video tag.
                 </video>
             </div>
@@ -54,13 +67,13 @@
             import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
             const callback = function () {
             alert('A callback was triggered');
-        };
-        const config = {
-            startOnLoad: true,
-            flowchart: { useMaxWidth: true, htmlLabels: true },
-            securityLevel: 'loose',
-        };
-        mermaid.initialize(config);
+            };
+            const config = {
+                startOnLoad: true,
+                flowchart: { useMaxWidth: true, htmlLabels: true },
+                securityLevel: 'loose',
+            };
+            mermaid.initialize(config);
         </script>
 
         <script src="video_player.js"></script>
