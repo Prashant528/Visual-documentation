@@ -13,8 +13,17 @@ function textPopup(index) {
     var popup = document.getElementById("myPopup");
     // popup.innerText="Welcome to Studytonight"; 
     popup.innerText= texts[index]
-    popup.classList.toggle("show");
+    // popup.classList.toggle("show");
+    window.open("#container", "_self");
 }
+
+function createPopup(index){
+    var popup = open("", "Popup", "width=500,height=300");
+    var aOk = popup.document.createElement("p");
+    aOk.innerHTML = texts[index]
+    popup.document.body.appendChild(aOk);
+    }
+    
 
 var texts = [
     "We invite you to join the Flutter team, which is made up of volunteers and sponsored folk alike! There are many ways to contribute, including writing code, filing issues on GitHub, helping people on our mailing lists, our chat channels, or on Stack Overflow, helping to triage, reproduce, or fix bugs that people have filed, adding to our documentation, doing outreach about Flutter, or helping out in any other way.We grant commit access (which includes full rights to the issue database, such as being able to edit labels) to people who have gained our trust and demonstrated a commitment to Flutter. For more details see the Contributor access page on our wiki.We communicate primarily over GitHub and Discord.Before you get started, we encourage you to read these documents which describe some of our community norms: Our code of conduct, which stipulates explicitly that everyone must be gracious, respectful, and professional. This also documents our conflict resolution policy and encourages people to ask questions.Values, which talks about what we care most about."
@@ -48,5 +57,5 @@ var texts = [
     When closing the duplicate bug, the github issue tracker does not copy the list of people being notified on the closed bug into the original bug. This can matter, especially when asking on the original bug for things like reproduction steps. Consider cc\'ing the author of the duplicate issue into the original issue,\
      especially if we\'re still trying to determine reproduction steps for the issue.'
      ,
-     
+
 ]

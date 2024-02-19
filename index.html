@@ -55,12 +55,12 @@
             H2-->H2c(Style guide)
             H2-->H2d(Tree Hygiene)
         
-            click A call textPopup(0)
-            click B call textPopup(1)
-            click B1 call textPopup(2)
-            click B2 call textPopup(3)
-            click B21 call textPopup(4)
-            click B22 call textPopup(5)
+            click A call createPopup(0)
+            click B call createPopup(1)
+            click B1 call createPopup(2)
+            click B2 call createPopup(3)
+            click B21 call createPopup(4)
+            click B22 call createPopup(5)
             click B32 call openPopup("")
             click B33 call openPopup("")
             click C1 call openPopup("")
@@ -87,11 +87,18 @@
         </div>
 
         <div class="popup" onclick="textPopup()">
-            
             <span class="popuptext" id="myPopup">
-                <button class="close-button" onclick="TextPopup()">✕</button>
                    </span>
-          </div>
+        </div>
+        
+        <div id="container">
+        <div id="exampleModal" class="reveal-modal">
+                <h2>POP UP</h2>
+                    <span class="popuptext" id="myPopup">Hi
+                    </span>
+            <a href="#" class="close-reveal-modal">×</a>
+        </div>
+        </div>
 
 
 
