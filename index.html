@@ -7,34 +7,60 @@
     <body>
         <pre class="mermaid">
           flowchart LR
-            A(Contribute in GitLab)-->B(Create your own project)
-            A-->C(Contribute to existing project)
+          %%{init:{'flowchart':{'nodeSpacing': 80, 'rankSpacing': 30}}}%%
+            A(Contribute to Flutter)-->B(Help in issue database)
+            A-->D(Help in API documentation)
+            A-->E(Help in Quality Assurance)
+            A-->F(Read the style guide)
+            A-->G(Get the flutter <br/>design document template)
+            A-->H(Help in development)
 
-            B-->B1(Blank Project)
-            B-->B2(From Template)
-            B-->B3(Import Project)
-            
-            B3-->B31(Github)
-            B3-->B32(Gitea)
-            B3-->B33(BitBucket)
+            B-->B1(Join discord, <br/>Read Code of Conduct)
+            B1-->B2(Triage an issue)
 
-            C-->C1(Create Fork)
+            B2-->B21(Determine actionable and non-actionable issues)
+            B2-->B22(Handle duplicates)
+            B2-->B23(Help in documentation issues)
+            B2-->B24(Assigning labels)
+            B2-->B25(Learn team triage process)
+            B2-->B26(Attend critical triage meeting)
+            B2-->B27(Issue hygiene)
 
-            C1-->C11(Download)
-            C1-->C12(Clone)
-            C1-->C13(Add Files/Change Files)
+            B27-->B27a(About comments)
+            B27-->B27b(Locking an issue)
+            B27-->B27c(Priorities)
+            B27-->B27d(Assigning issues)
+            B27-->B27e(Closing issues)
 
-            C11-->C11A(Creating a merge request)
-            C12-->C11B(Creating a merge request)
-            C13-->C11C(Creating a merge request)
+            H-->H1(Setup engine development environment)
+            H1-->H1a(Get code dependencies)
+            H1a-->H1b(Get the source)
+            H1b-->H1c(Setup Goma)
 
-            click A call openPopup("")
-            click B call openPopup("")
-            click C call openPopup("")
-            click B1 call openPopup("")
-            click B2 call openPopup("")
-            click B3 call openPopup("")
-            click B31 call openPopup("")
+            H1c-->H41(General compilation tips)-->H4a(Flutter Tools)
+            H1c-->H42(Using a custom dart SDK)-->H4a
+            H1c-->H43(Compiling for Android)-->H4a
+            H1c-->H44(Compiling for iOS from macOS)-->H4a
+            H1c-->H45(Compiling for macOS or Linux)-->H4a
+            H1c-->H46(Compiling for Windows)-->H4a
+            H1c-->H47(Compiling for Fuchsia)-->H4a
+            H1c-->H48(Compiling for testing)-->H4a
+
+            H4a-->H4b(Signing commits)
+
+            H-->H2(Setup framework development environment)
+
+            H2-->H2a(Run examples)
+            H2-->H2b(Flutter tool)
+            H2-->H2c(Style guide)
+            H2-->H2d(Tree Hygiene)
+        
+            click A call textPopup(0)
+            click B call textPopup(1)
+            click B1 call textPopup(2)
+            click B2 call textPopup(3)
+            click B21 call textPopup(4)
+            click B22 call textPopup(5)
             click B32 call openPopup("")
             click B33 call openPopup("")
             click C1 call openPopup("")
@@ -45,8 +71,8 @@
             click C11B call openPopup("")
             click C11C call openPopup("")
 
-            class A,B,C,B1,B2,B3,B31,B32,B33,C1,C11,C12,C13,C11A,C11B,C11C graph_nodes;
-      
+            class A,B,C,D,E,F,G,H,B1,B2,B21,B22,B23,B24,B25,B26,B27,B27a,B27b,B27c,B27d,B27e,H1,H1a,H1b,H1c,H1d,H41,H42,H43,H44,H45,H46,H47,H48,H4a,H4b,H2,H2a,H2b,H2c,H2d graph_nodes;
+            
         </pre>
     
         <div class="popup-overlay" id="popupOverlay" onclick="closePopup()">
@@ -59,6 +85,16 @@
                 </video>
             </div>
         </div>
+
+        <div class="popup" onclick="textPopup()">
+            
+            <span class="popuptext" id="myPopup">
+                <button class="close-button" onclick="TextPopup()">✕</button>
+                   </span>
+          </div>
+
+
+
 
         <!-- Button to open the popup -->
         <!-- <button onclick="openPopup()">Open Video Popup</button> -->
@@ -74,6 +110,7 @@
                 securityLevel: 'loose',
             };
             mermaid.initialize(config);
+
         </script>
 
         <script src="video_player.js"></script>
