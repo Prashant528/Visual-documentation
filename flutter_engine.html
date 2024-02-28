@@ -1,0 +1,85 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <pre class="mermaid">
+          flowchart LR
+          %%{init:{'flowchart':{'nodeSpacing': 80, 'rankSpacing': 30}}}%%
+            A(Contribute to Flutter)-->B(Code of Conduct)
+            A-->D(Contributor Guide)
+            A-->E(Setting up the dev environment)
+            A-->F(Styling Code)
+            A-->G(Testing)
+
+            F-->F1(C++)
+            F-->F2(Objective C)
+            F-->F3(Java)
+
+            G-->G1(Tree hygiene)
+            G-->G2(Testing the engine wiki)
+            G-->G3(Skia Gold)
+
+            G2-->G2a(C++ Core Engine)
+            G2-->G2b(Java Android embedding)
+            G2-->G2c(Objective C iOS embedding)
+            G2-->G2d(Dart dart-ui)
+            G2-->G2e(Web Engine)
+ 
+
+            class A,B,C,D,E,F,G,F1,F2,F3,G1,G2,G3,G2a,G2b,G2c,G2d,G2e graph_nodes;
+            
+        </pre>
+    
+        <div class="popup-overlay" id="popupOverlay" onclick="closePopup()">
+            <button class="close-button" onclick="closePopup()">✕</button>
+           
+            <div class="video-container">
+                <video controls autoplay width="100%" height="100%">
+                    <source id="video_source" src="test_video.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+        </div>
+
+        <div class="popup" onclick="textPopup()">
+            <span class="popuptext" id="myPopup">
+                   </span>
+        </div>
+        
+        <div id="container">
+        <div id="exampleModal" class="reveal-modal">
+                <h2>POP UP</h2>
+                    <span class="popuptext" id="myPopup">Hi
+                    </span>
+            <a href="#" class="close-reveal-modal">×</a>
+        </div>
+        </div>
+
+
+
+
+        <!-- Button to open the popup -->
+        <!-- <button onclick="openPopup()">Open Video Popup</button> -->
+
+        <script type="module">
+            import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+            const callback = function () {
+            alert('A callback was triggered');
+            };
+            const config = {
+                startOnLoad: true,
+                flowchart: { useMaxWidth: true, htmlLabels: true },
+                securityLevel: 'loose',
+            };
+            mermaid.initialize(config);
+
+        </script>
+
+        <script src="video_player.js"></script>
+      
+      </body>
+
+</html>
